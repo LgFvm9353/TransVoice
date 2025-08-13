@@ -1,5 +1,3 @@
-// 语音播放组件
-
 import {
     useEffect,
     useRef
@@ -12,9 +10,7 @@ const AudioPlayer = ({ audioUrl, mimeType}) => {
     useEffect(() => {
         if (audioPlayer.current && audioSource.current) {
             audioSource.current.src = audioUrl;
-            // 用户交互后才能加载资源
-            audioPlayer.current.load()
-            // audioPlayer.current.play();
+            audioPlayer.current.play();
         }
     }, [audioUrl])
     return (
